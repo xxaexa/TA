@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eXa-Voucher</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-gradient-to-t from-main to-white">
+    <!-- header -->
+    <header class="absolute top-0 left-0 w-full flex items-center z-10">
+      <div class="container">
+        <div class="flex items-center lg:justify-center relative">
+          <div class="px-4">
+            <a href="#home" class="font-bold text-lg block py-6"><img src="./img/exa.png" alt="exaLogo" class="w-10 lg:hidden" /></a>
+          </div>
+          <div class="flex items-center px-4">
+            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden px-4">
+              <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
+            <!-- nav -->
+            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:justify-center">
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a href="" class="text-dark text-base py-2 mx-8 flex group-hover:text-blue-100">HOME</a>
+                </li>
+                <li class="group">
+                  <a href="" class="text-dark text-base py-2 mx-8 flex group-hover:text-blue-100">VOUCHER</a>
+                </li>
+                <li class="group">
+                  <a href="" class="text-dark text-base py-2 mx-8 flex group-hover:text-blue-100">TRACK</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- MIX -->
+    <section class="mb-20 pb-5 pt-16 min-h-screen">
+      <div class="container">
+        <div class="flex flex-wrap justify-center p-2 md:space-x-16">
+          <div class="mt-8 max-w-sm md:text-xl lg:w-1/2">
+            <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-6xl">CARA BELI</h1>
+            <div class="mx-auto w-80 text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+              <div class="tata max-w-sm">
+                <p>1.Masukan UID</p>
+                <p>2.Pilih Voucher</p>
+                <p>3.Sebelum Beli Pastikan Semua Data Benar</p>
+                <p>4.Pilih Beli</p>
+                <br />
+                <p class="text-center">Simpan <span class="font-extrabold">KODE UNIK</span> Jika Ada Masalah Maka Kode Unik Sangat Dibutuhkan</p>
+                <p class="text-center">
+                  Hubungi <span class="font-extrabold"><a href="">ADMIN</a></span> Jika Ada Masalah
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="voucher" class="mt-8 max-w-sm lg:w-1/2">
+            <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-6xl">VOUCHER</h1>
+            <div class="mx-auto bg-main w-80 text-center p-5 rounded-2xl bg-opacity-50 shadow-xl shadow-main/50 md:text-xl">
+              <form action="/voucher" method="post">
+                <p class="text-xl text-white mb-2">UID</p>
+                <label for="uid">
+                  <input type="text" class="hidden" name="namaGame" value="Valorant" />
+                  <input type="text" name="uid" class="text-white p-1 bg-main mb-4 bg-opacity-20 rounded-sm ring-1 ring-white" />
+                </label>
+                <br />
+                <div class="wrapButton">
+                  <p class="text-xl text-white mb-2">VALORANT POINT</p>
+                  <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="100.000" name="variasi" value="1000VP">
+                    1000 VP
+                  </button>
+                  <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="200.000" name="variasi" value="2000VP">
+                    2000 VP
+                  </button>
+                  <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="300.000" name="variasi" value="3000VP">
+                    3000 VP
+                  </button>
+                  <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="400.000" name="variasi" value="4000VP">
+                    4000 VP
+                  </button>
+                  <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="500.000" name="variasi" value="5000VP">
+                    5000 VP
+                  </button>
+                </div>
+                <div id="wrapharga" class="hidden">
+                  <p class="text-xl text-white mb-2">Harga</p>
+                  <input id="harga" disabled type="text" class="text-center mx-auto rounded-xl bg-main p-1 m-2 text-white" name="harga" value="" />
+                </div>
+                <br />
+                <button type="submit" class="w-24 rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out">Beli</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="bg-violet-400" />
+    <footer class="">
+      <p class="my-5 text-2xl text-white text-center"><a href="" class="hover:text-fuchsia-300 transition duration-500 ease-in-out">xxaexa</a></p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
+
+<!-- Button mantep -->
+<!-- <a href="#" class="text-base bg-purple-950 rounded-full text-white py-3 px-8 hover:text-red-300 hover:opacity-90 transition duration-500 ease-in-out">CALL ME BEB</a> -->
