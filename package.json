@@ -2,7 +2,7 @@
   "name": "exafullstack",
   "version": "1.0.0",
   "description": "Tugas Akhir",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "devstart": "nodemon server.js",
     "build:css": "postcss public/css/tailwind.css -o public/css/style.css"

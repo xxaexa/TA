@@ -1,0 +1,59 @@
+<%- include("./../partials/head.ejs") %>
+<!-- admin -->
+<section class="mb-20 pb-5 pt-16 min-h-screen">
+  <div class="container">
+    <div class="flex flex-wrap justify-center p-2">
+      <!-- PENJUALAN GAME -->
+      <div class="mt-8 w-full md:text-xl">
+        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN GAME</h1>
+        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+          <div class="border">
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="text-xs text-gray-700">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">Voucher</th>
+                    <th scope="col" class="px-6 py-3">Uid</th>
+                    <th scope="col" class="px-6 py-3">Variasi</th>
+                    <th scope="col" class="px-6 py-3">Harga</th>
+                    <th scope="col" class="px-6 py-3">Tanggal Transaksi</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% game.forEach(game => { %>
+                  <tr class="bg-opacity-30">
+                    <th class="px-6 py-4"><%= game.voucher %></th>
+                    <td class="px-6 py-4"><%= game.uid %></td>
+                    <td class="px-6 py-4"><%= game.variasi %></td>
+                    <td class="px-6 py-4"><%= game.harga %></td>
+                    <td class="px-6 py-4"><%= game.createdAt.toLocaleDateString() %></td>
+                    <td class="px-6 py-4 uppercase text-red-600"><%= game.status %></td>
+                    <td class="px-6 py-4"><a href="">Update</a></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PENJUALAN PULSA -->
+      <div class="mt-8 w-full md:text-xl">
+        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN PULSA</h1>
+        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+          <div class=""></div>
+        </div>
+      </div>
+      <!-- PENJUALAN EMONEY -->
+      <div class="mt-8 w-full md:text-xl">
+        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN EMONEY</h1>
+        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+          <div class=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include("./../partials/footer.ejs") %>

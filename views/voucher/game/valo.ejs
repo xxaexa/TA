@@ -1,0 +1,64 @@
+<%- include("./../../partials/head.ejs") %>
+
+<!-- MIX -->
+<section class="mb-20 pb-5 pt-16 min-h-screen">
+  <div class="container">
+    <div class="flex flex-wrap justify-center p-2 md:space-x-16">
+      <div class="mt-8 max-w-sm md:text-xl lg:w-1/2">
+        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-6xl">CARA BELI</h1>
+        <div class="mx-auto w-80 text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+          <div class="tata max-w-sm">
+            <p>1.Masukan UID</p>
+            <p>2.Pilih Voucher</p>
+            <p>3.Sebelum Beli Pastikan Semua Data Benar</p>
+            <p>4.Pilih Beli</p>
+            <br />
+            <p class="text-center">Simpan <span class="font-extrabold">KODE UNIK</span> Jika Ada Masalah Maka Kode Unik Sangat Dibutuhkan</p>
+            <p class="text-center">
+              Hubungi <span class="font-extrabold"><a href="">ADMIN</a></span> Jika Ada Masalah
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="voucher" class="mt-8 max-w-sm lg:w-1/2">
+        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-6xl">VOUCHER</h1>
+        <div class="mx-auto bg-main w-80 text-center p-5 rounded-2xl bg-opacity-50 shadow-xl shadow-main/50 md:text-xl">
+          <form action="/voucher/game/valorant" method="post">
+            <p class="text-xl text-white mb-2">UID</p>
+            <label for="uid">
+              <input type="text" class="hidden" name="namaGame" value="Valorant" />
+              <input type="text" name="uid" class="text-white p-1 bg-main mb-4 bg-opacity-20 rounded-sm ring-1 ring-white" />
+            </label>
+            <br />
+            <div class="wrapButton">
+              <p class="text-xl text-white mb-2">VALORANT POINT</p>
+              <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="100.000" name="variasi" value="1000VP">
+                1000 VP
+              </button>
+              <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="200.000" name="variasi" value="2000VP">
+                2000 VP
+              </button>
+              <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="300.000" name="variasi" value="3000VP">
+                3000 VP
+              </button>
+              <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="400.000" name="variasi" value="4000VP">
+                4000 VP
+              </button>
+              <button id="variasi" type="button" class="w-full rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out" data-harga="500.000" name="variasi" value="5000VP">
+                5000 VP
+              </button>
+            </div>
+            <div id="wrapharga" class="hidden">
+              <p class="text-xl text-white mb-2">Harga</p>
+              <input id="harga" disabled type="text" class="text-center mx-auto rounded-xl bg-main p-1 m-2 text-white" name="harga" value="" />
+            </div>
+            <br />
+            <button type="submit" class="w-24 rounded-xl bg-main p-1 m-2 text-white hover:opacity-70 hover:text-slate-200 transition duration-500 ease-in-out">Beli</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="bg-violet-400" />
+<%- include("./../../partials/footer.ejs") %>
