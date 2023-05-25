@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const gameSchema = new mongoose.Schema({
   voucher: String,
@@ -16,8 +16,8 @@ const gameSchema = new mongoose.Schema({
   harga: Number,
   status: {
     type: String,
-    default: "Pending",
+    default: 'Pending',
   },
-});
+})
 
-module.exports = mongoose.model("Game", gameSchema);
+module.exports = mongoose.model('Game', gameSchema)

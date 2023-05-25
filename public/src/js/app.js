@@ -1,28 +1,46 @@
 window.onscroll = () => {
-  const header = document.querySelector("header");
-  const fixNav = header.offsetTop;
-  const wa = document.getElementById("wa");
+  const header = document.querySelector('header')
+  const fixNav = header.offsetTop
+  const wa = document.getElementById('wa')
 
   if (window.pageYOffset > fixNav) {
-    header.classList.add("navbar-fixed");
+    header.classList.add('navbar-fixed')
   } else {
-    header.classList.remove("navbar-fixed");
+    header.classList.remove('navbar-fixed')
   }
-};
+}
 
-const hamburger = document.querySelector("#hamburger");
-const navMenu = document.querySelector("#nav-menu");
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("hamburger-active");
-  navMenu.classList.toggle("hidden");
-});
+const hamburger = document.querySelector('#hamburger')
+const navMenu = document.querySelector('#nav-menu')
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('hamburger-active')
+  navMenu.classList.toggle('hidden')
+})
 
-$(".wrapButton #variasi").each(function () {
+$('.wrapButton .variasi').each(function () {
   const $this = $(this),
-    harga = $this.data("harga");
-  $this.on("click", function () {
-    $("#wrapharga").removeClass("hidden");
-    $("#harga").val(harga);
-    $("#harga").attr("value", harga);
-  });
-});
+    harga = $this.data('harga')
+  $this.on('click', function () {
+    $('#wrapharga').removeClass('hidden')
+    $('#harga').val(harga)
+    $('#harga').attr('value', harga)
+    return (vp = harga)
+  })
+})
+
+// $('#submitButton').click(function (e) {
+//   alert()
+// })
+// $().submit(function () {
+//   alert()
+// })
+// $(selector).submit()
+
+$.ajax({
+  url: 'route/action/',
+  type: 'POST',
+  data: 'your form data',
+  success: function (response) {
+    alert('evaluate response and show alert')
+  },
+}) 

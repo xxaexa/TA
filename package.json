@@ -7,7 +7,7 @@
     "devstart": "nodemon server.js",
     "build:css": "postcss public/css/tailwind.css -o public/css/style.css"
   },
-  "author": "andre",
+  "author": " ",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
