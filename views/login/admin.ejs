@@ -1,59 +1,102 @@
-<%- include("./../partials/head.ejs") %>
-<!-- admin -->
-<section class="mb-20 pb-5 pt-16 min-h-screen">
-  <div class="container">
-    <div class="flex flex-wrap justify-center p-2">
-      <!-- PENJUALAN GAME -->
-      <div class="mt-8 w-full md:text-xl">
-        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN GAME</h1>
-        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
-          <div class="border">
-            <div class="relative overflow-x-auto">
-              <table class="w-full text-sm text-left">
-                <thead class="text-xs text-gray-700">
-                  <tr>
-                    <th scope="col" class="px-6 py-3">Voucher</th>
-                    <th scope="col" class="px-6 py-3">Uid</th>
-                    <th scope="col" class="px-6 py-3">Variasi</th>
-                    <th scope="col" class="px-6 py-3">Harga</th>
-                    <th scope="col" class="px-6 py-3">Tanggal Transaksi</th>
-                    <th scope="col" class="px-6 py-3">Status</th>
-                    <th scope="col" class="px-6 py-3">Update</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% game.forEach(game => { %>
-                  <tr class="bg-opacity-30">
-                    <th class="px-6 py-4"><%= game.voucher %></th>
-                    <td class="px-6 py-4"><%= game.uid %></td>
-                    <td class="px-6 py-4"><%= game.variasi %></td>
-                    <td class="px-6 py-4"><%= game.harga %></td>
-                    <td class="px-6 py-4"><%= game.createdAt.toLocaleDateString() %></td>
-                    <td class="px-6 py-4 uppercase text-red-600"><%= game.status %></td>
-                    <td class="px-6 py-4"><a href="">Update</a></td>
-                  </tr>
-                  <% }) %>
-                </tbody>
-              </table>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eXa-Voucher</title>
+    <link rel="stylesheet" href="./../../src/css/style.css" />
+  </head>
+  <body class="bg-gradient-to-t from-main to-white">
+    <!-- header -->
+    <header class="bg-white absolute top-0 left-0 w-full flex items-center z-10">
+      <div class="container">
+        <div class="flex items-center lg:justify-center relative">
+          <div class="px-4">
+            <a href="#home" class="font-bold text-lg block py-6"><img src="./src/img/exa.png" alt="exaLogo" class="w-10 lg:hidden" /></a>
+          </div>
+          <div class="flex items-center px-4">
+            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden px-4">
+              <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
+            <!-- nav -->
+            <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:justify-center">
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a href="" class="text-dark text-base py-2 mx-8 flex group-hover:text-second">HALO MIMIN </a>
+                </li>
+                <li class="group">
+                  <a href="" class="text-dark text-base py-2 mx-8 flex group-hover:text-second">LOGOUT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- admin -->
+    <section class="mt-20 pb-5 pt-16 min-h-screen">
+      <div class="container">
+        <div class="flex flex-wrap justify-center p-2">
+          <!-- PENJUALAN GAME -->
+          <div class="mt-8 w-full md:text-xl overflow-y-scroll h-[500px] border-dark border-b-4">
+            <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN GAME</h1>
+            <div class="mx-auto w-auto text-center p-5">
+              <div class="">
+                <div class="relative overflow-x-auto">
+                  <table class="w-full text-sm text-left border-4 border-dark">
+                    <thead class="text-xs border-4 border-dark">
+                      <tr>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Voucher</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Uid</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Variasi</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Harga</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Tanggal Transaksi</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Status</th>
+                        <th scope="col" class="px-6 py-3 font-bold uppercase text-base">Update</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% game.forEach(game => { %>
+                      <tr>
+                        <th class="px-6 py-4 text-base font-normal"><%= game.voucher %></th>
+                        <td class="px-6 py-4 text-base"><%= game.uid %></td>
+                        <td class="px-6 py-4 text-base"><%= game.variasi %></td>
+                        <td class="px-6 py-4 text-base"><%= game.harga %></td>
+                        <td class="px-6 py-4 text-base"><%= game.createdAt.toLocaleDateString() %></td>
+                        <td class="px-6 py-4 uppercase text-base"><%= game.status %></td>
+                        <td class="px-6 py-4 text-base"><a href="" class="hover:text-white">Update</a></td>
+                      </tr>
+                      <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- PENJUALAN PULSA -->
+          <div class="mt-8 w-full md:text-xl">
+            <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN PULSA</h1>
+            <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+              <div class=""></div>
+            </div>
+          </div>
+          <!-- PENJUALAN EMONEY -->
+          <div class="mt-8 w-full md:text-xl">
+            <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN EMONEY</h1>
+            <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
+              <div class=""></div>
             </div>
           </div>
         </div>
       </div>
-      <!-- PENJUALAN PULSA -->
-      <div class="mt-8 w-full md:text-xl">
-        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN PULSA</h1>
-        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
-          <div class=""></div>
-        </div>
-      </div>
-      <!-- PENJUALAN EMONEY -->
-      <div class="mt-8 w-full md:text-xl">
-        <h1 class="mb-8 text-main text-center block font-bold text-4xl md:text-4xl">PENJUALAN EMONEY</h1>
-        <div class="mx-auto w-auto text-center p-5 rounded-2xl shadow-xl shadow-main/50">
-          <div class=""></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<%- include("./../partials/footer.ejs") %>
+    </section>
+
+    <footer class="">
+      <p class="my-5 text-2xl text-white text-center"><a href="" class="hover:text-fuchsia-300 transition duration-500 ease-in-out">xxaexa</a></p>
+    </footer>
+    <script src="./../../src/js/app.js"></script>
+  </body>
+</html>

@@ -1,13 +1,36 @@
-<%- include("./../partials/head.ejs") %>
-<!-- INVOICE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eXa-Voucher</title>
+    <link rel="stylesheet" href="./../../src/css/style.css" />
+  </head>
+  <body class="bg-gradient-to-t from-main to-white">
+    <% if (show_modal) { %>
+    <!-- ====== Modal Section Start -->
+    <section class="min-h-screen">
+      <div class="fixed top-0 left-0 flex h-full min-h-screen w-full items-center justify-center px-16 py-10 backdrop:blur-3xl">
+        <div class="max-w-[620px] rounded-[20px] shadow-xl shadow-main/50 py-16 px-16 text-center bg-opacity-70 md:py-[60px] md:px-[70px]">
+          <h1 class="mb-8 text-main text-center font-bold text-4xl md:text-6xl">INVOICE</h1>
+          <div class="">
+            <div class="text-black text-center p-10">
+              <p class="font-bold ">KODE UNIK : <%= id %></p>
+              <p>JENIS VOUCHER : <%= voucher %></p>
+              <p>UID           : <%= uid %></p>
+              <p>VARIASI : <%= vp %></p>
+              <p>STATUS : <%= status %></p>
+            </div>
+            <div class="">
+              <a href="./valorant" class="text-center font-bold ">CLOSE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% } %>
 
-<section class="mb-20 pb-5 pt-16 min-h-screen">
-  <div class="container">
-    <div class="flex flex-wrap justify-center p-2">
-      <p>kodeunik</p>
-      <br />
-      <p><%= id %></p>
-    </div>
-  </div>
-</section>
-<%- include("./../partials/footer.ejs") %>
+    <script src="./src/js/app.js"></script>
+  </body>
+</html>

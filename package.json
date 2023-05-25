@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "devstart": "nodemon server.js",
-    "build:css": "postcss public/css/tailwind.css -o public/css/style.css"
+    "build:css": "postcss ./public/src/css/tailwind.css -o ./public/src/css/style.css"
   },
   "author": " ",
   "license": "ISC",
