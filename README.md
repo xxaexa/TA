@@ -1,5 +1,5 @@
-# Tugas Akhir
-dari tugas uas yang dibuat ulang dengan MEN STACK
+# zWan
+dibuat ulang dengan menggunakan javascipt dan tailwind
 
 
 kurang sistem login 
